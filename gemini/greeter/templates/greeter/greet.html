@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Greeter</title>
+</head>
+<body>
+
+    <h1>Enter Your Name</h1>
+
+    <form method="post">
+        {% csrf_token %} {# Important for security! #}
+        {{ form.as_p }} {# Renders the form fields as paragraphs #}
+        <button type="submit">Submit</button>
+    </form>
+
+    <hr>
+
+    {% if user_name %}
+        <h2>Hello {{ user_name }}!</h2>
+    {% else %}
+        <p>Please enter your name above.</p>
+    {% endif %}
+
+</body>
+</html>

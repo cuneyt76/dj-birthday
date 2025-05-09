@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Birthday Calculation Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Birthday Calculator</h1>
+    
+    <div class="result">
+        <h2>Result:</h2>
+        <p>For birthday: {{ birth_date|date:"d F Y" }}</p>
+        <p>Years passed: <strong>{{ result }}</strong></p>
+    </div>
+    
+    <a href="{% url 'birthday_app:birthday_form' %}" class="back-link">Calculate Another</a>
+</body>
+</html>
